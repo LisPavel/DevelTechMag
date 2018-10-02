@@ -1,0 +1,9 @@
+package javaapplication2;
+
+class MyList
+{
+    class Node
+    {
+        
+    }
+}

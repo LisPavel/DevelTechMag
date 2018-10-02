@@ -1,0 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author aiankudinov
+ */
+public class Stack extends MyList{
+    Stack(){super();}
+
+    void push(int val){
+        this.add(val);
+    }
+
+    int pop(){
+        int res = this.tail.leftNeigh.value;
+        this.delete();
+        return res;
+    }
+}

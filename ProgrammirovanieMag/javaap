@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication2;
+
+/**
+ *
+ * @author aiankudinov
+ */
+public class JavaApplication2 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        MyList obj = new MyList();
+//        obj.add(23);
+//        obj.add(32);
+//        obj.add(12);
+//        obj.add(52);
+//        System.out.println(obj);
+//        obj.delete();
+//        System.out.println(obj);
+
+//        Stack newst = new Stack();
+//        newst.push(23);
+//        newst.push(32);
+//        newst.push(52);
+//        System.out.println(newst.pop());
+//        System.out.println(newst);
+//        System.out.println(" ");
+//        Queue newqe = new Queue();
+//        newqe.push(4);
+//        newqe.push(3);
+//        newqe.push(2);
+//        System.out.println(newqe);
+//        System.out.println(newqe.get());
+//        System.out.println(newqe);
+//
+        MyList[] list = new MyList[3];
+        list[0]= new Stack();
+        list[1]= new Queue();
+        list[2] = new Stack();
+        for(int i = 0;i<3;i++){
+            list[i].push(0);
+            list[i].push(1);
+        }
+        for(MyList x:list)
+            System.out.println(x);
+
+    }
+
+}
