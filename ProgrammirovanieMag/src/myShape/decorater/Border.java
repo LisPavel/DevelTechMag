@@ -1,5 +1,6 @@
 package myShape.decorater;
 
+import myShape.Fill;
 import myShape.ShapeForm;
 
 import java.awt.*;
@@ -46,6 +47,11 @@ public class Border extends ShapeDecorator {
     @Override
     public void setSf(ShapeForm sf) {
         msi.setSf(sf);
+    }
+
+    @Override
+    public void setFb(Fill fill) {
+        msi.setFb(fill);
     }
 
     @Override

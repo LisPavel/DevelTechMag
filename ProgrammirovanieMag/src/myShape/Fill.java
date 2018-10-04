@@ -7,7 +7,7 @@ import java.awt.*;
  */
 public class Fill implements FillBehavior{
     int penSize;
-    public  Fill(int penSize)
+    public Fill(int penSize)
     {
         this.penSize = penSize;
     }

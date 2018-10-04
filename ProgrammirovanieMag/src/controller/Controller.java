@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
+import myShape.Fill;
 import myShape.MyLine;
 import myShape.MyShape;
 import myShape.decorater.Border;
@@ -26,7 +27,8 @@ public class Controller {
     public Controller(){
         myShape = new Cross( new Border( new MyShape() ));
         myShape.setColor(Color.PINK);
-          myShape.setSf(new MyLine(new Line2D.Double()) );
+        myShape.setFb(new Fill(2));
+        //myShape.setSf(new MyLine(new Line2D.Double()) );
         myPanel = new MyPanel();
         myFrame = new MyFrame(myPanel);
         //myShape.setParametr(11);

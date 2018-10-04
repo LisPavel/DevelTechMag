@@ -29,6 +29,13 @@ public class MyShape extends Observable implements MyShapeInterface {
         setChanged();
         notifyObservers();
     }
+    
+    @Override
+    public void setFb(Fill fill) {
+        this.fb = fill;
+        setChanged();
+        notifyObservers();
+    }
 
     public MyShape(){
         col = Color.red;
@@ -74,7 +81,4 @@ public class MyShape extends Observable implements MyShapeInterface {
 //        return super.clone();
 //    }
 
-    public void setFb(Fill fill) {
-        fb = fill;
-    }
 }
