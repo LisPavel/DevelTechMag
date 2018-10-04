@@ -15,12 +15,11 @@ public class Cross extends ShapeDecorator {
     public void draw(Graphics2D g2) {
         msi.draw(g2);
 
-        Point2D left = null, right = null;
-
         Shape helpShape = msi.getShape().getShape();
 
         if (helpShape instanceof RectangularShape){
-
+            Point2D left = null;
+            Point2D right = null;
             if (!helpShape.getBounds2D().isEmpty()){
                 left = new Point2D.Double(
                         helpShape.getBounds2D().getMinX()  ,
@@ -41,6 +40,11 @@ public class Cross extends ShapeDecorator {
     }
 
     @Override
+    public void setSf(ShapeForm sf) {
+        msi.setSf(sf);
+    }
+
+    @Override
     public void setSize(Point2D[] size) {
         msi.setSize(size);
         setChanged();
@@ -50,6 +54,16 @@ public class Cross extends ShapeDecorator {
     @Override
     public void setParametr(int param) {
         return;
+    }
+
+    @Override
+    public void setColor(Color col) {
+        msi.setColor(col);
+    }
+
+    @Override
+    public Color getColor() {
+        return msi.getColor();
     }
 
     @Override

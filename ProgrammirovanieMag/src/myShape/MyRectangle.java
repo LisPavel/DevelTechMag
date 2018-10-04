@@ -7,10 +7,12 @@ import java.awt.*;
  */
 public class MyRectangle implements ShapeForm{
 
+    RectangularShape shape;
+
     public MyRectangle(){
         shape = new Rectangle2D.Double();
     }
-    RectangularShape shape;
+
     public MyRectangle(RectangularShape s){
         shape = s;
     }

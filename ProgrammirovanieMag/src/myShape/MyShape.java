@@ -16,39 +16,25 @@ import java.util.Observable;
 public class MyShape extends Observable implements MyShapeInterface {
     private Color col;
     private ShapeForm sf;
-    private int borderSize;
     private FillBehavior fb;
     private int param;
 
-
-    public int getBorderSize() {
-        return borderSize;
-    }
-
-    public void setBorderSize(int borderSize) {
-        this.borderSize = borderSize;
-    }
-
-    public Color getCol() {
-        return col;
-    }
-
-    public void setCol(Color col) {
-        this.col = col;
-    }
-
-//    public ShapeForm getSf() {
+    //    public ShapeForm getSf() {
 //        return sf;
 //    }
 
+    @Override
     public void setSf(ShapeForm sf) {
         this.sf = sf;
+        setChanged();
+        notifyObservers();
     }
+
     public MyShape(){
         col = Color.red;
         sf = new MyRectangle(new Ellipse2D.Double());
-//        sf = new MyLine(new Line2D.Double());
-        fb = new Fill();
+        //sf = new MyLine(new Line2D.Double());
+        fb = new NoFill(5);
     }
 
     @Override
@@ -64,6 +50,16 @@ public class MyShape extends Observable implements MyShapeInterface {
     }
 
     @Override
+    public void setColor(Color col) {
+        this.col = col;
+    }
+
+    @Override
+    public Color getColor() {
+        return col;
+    }
+
+    @Override
     public ShapeForm getShape() {
         return sf;
     }
@@ -75,9 +71,6 @@ public class MyShape extends Observable implements MyShapeInterface {
 
 //    @Override
 //    protected Object clone() throws CloneNotSupportedException {
-//
-//
-//
 //        return super.clone();
 //    }
 

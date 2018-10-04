@@ -3,9 +3,7 @@ package myShape.decorater;
 import myShape.ShapeForm;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.awt.geom.RectangularShape;
 
 public class Border extends ShapeDecorator {
@@ -17,6 +15,7 @@ public class Border extends ShapeDecorator {
     @Override
     public void draw(Graphics2D g2) {
         msi.draw(g2);
+        g2.setPaint(getColor());
 
         Point2D left = null, right = null;
 
@@ -45,6 +44,11 @@ public class Border extends ShapeDecorator {
     }
 
     @Override
+    public void setSf(ShapeForm sf) {
+        msi.setSf(sf);
+    }
+
+    @Override
     public void setSize(Point2D[] size) {
         msi.setSize(size);
         setChanged();
@@ -54,6 +58,16 @@ public class Border extends ShapeDecorator {
     @Override
     public void setParametr(int param) {
         this.width = param;
+    }
+
+    @Override
+    public void setColor(Color col) {
+        msi.setColor(col);
+    }
+
+    @Override
+    public Color getColor() {
+        return msi.getColor();
     }
 
     @Override

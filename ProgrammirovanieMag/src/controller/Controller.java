@@ -5,14 +5,16 @@ import View.MyFrame;
 import View.MyPanel;
 
 import java.awt.*;
+import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+
+import myShape.MyLine;
 import myShape.MyShape;
 import myShape.decorater.Border;
 import myShape.decorater.Cross;
 import myShape.decorater.MyShapeInterface;
 
 import java.util.Observable;
-import java.util.Observer;
 
 public class Controller {
     MyShapeInterface myShape;
@@ -23,9 +25,11 @@ public class Controller {
 
     public Controller(){
         myShape = new Cross( new Border( new MyShape() ));
+        myShape.setColor(Color.PINK);
+          myShape.setSf(new MyLine(new Line2D.Double()) );
         myPanel = new MyPanel();
         myFrame = new MyFrame(myPanel);
-        myShape.setParametr(11);
+        //myShape.setParametr(11);
         ((Observable)myShape).addObserver(myPanel);
         myPanel.setController(this);
         model = new Model();
