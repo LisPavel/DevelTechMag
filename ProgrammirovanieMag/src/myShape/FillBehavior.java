@@ -8,4 +8,6 @@ import java.awt.*;
 public interface FillBehavior {
 
     public void draw(Graphics2D g2, MyShape ms);
+
+    FillBehavior clone();
 }

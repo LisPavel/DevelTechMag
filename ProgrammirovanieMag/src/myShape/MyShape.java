@@ -31,7 +31,7 @@ public class MyShape extends Observable implements MyShapeInterface {
     }
     
     @Override
-    public void setFb(Fill fill) {
+    public void setFb(FillBehavior fill) {
         this.fb = fill;
         setChanged();
         notifyObservers();
@@ -80,6 +80,15 @@ public class MyShape extends Observable implements MyShapeInterface {
         this.sf = shapeForm;
     }
 
+    public MyShape clone(){
+        MyShape new_s = new MyShape();
+        new_s.setColor(col);
+        new_s.setFb(fb.clone());
+        new_s.setParametr(param);
+        new_s.setSf(sf.clone());
+        return new_s;
+//        return new MyShape((MyShape)this.clone());
+    }
 //    @Override
 //    protected Object clone() throws CloneNotSupportedException {
 //        return super.clone();

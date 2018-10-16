@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
+import fabrica.EllipseCreator;
+import fabrica.MyShapeCreator;
+import fabrica.RectCreator;
 import myShape.Fill;
 import myShape.MyLine;
 import myShape.MyShape;
@@ -19,6 +22,8 @@ import java.util.Observable;
 
 public class Controller {
     MyShapeInterface myShape;
+    MyShapeCreator myShapeCreator;
+    MyShape shape;
     MyPanel myPanel;
     MyFrame myFrame;
     Model model;
@@ -36,17 +41,29 @@ public class Controller {
         myPanel.setController(this);
         model = new Model();
         p = new Point2D[2];
+        shape = new MyShape();
+
+        shape.setColor(Color.red);
+
+
+//        myShapeCreator = new MyShapeCreator();
+//        myShapeCreator.setShapeCreator(new EllipseCreator());
+//        model.setMyShapeCreator(myShapeCreator);
+
+        model.setCurrShape(shape);
+        ((Observable)model).addObserver(myPanel);
     }
     public void press(Point2D point){
         p[0] = point;
+        model.addShape();
     }
 
     public void drag(Point2D point){
         p[1] = point;
-        myShape.setSize(p);
+        model.setSize(p);
     }
 
     public void draw(Graphics2D graph){
-        myShape.draw(graph);
+        model.draw(graph);
     }
 }
