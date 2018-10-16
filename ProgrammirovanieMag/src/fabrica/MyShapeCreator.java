@@ -8,12 +8,13 @@ public class MyShapeCreator {
 
     ShapeCreator shapeCreator;
 
-    public void setShapeForm(ShapeCreator shapeCreator) {
+    public void setShapeCreator(ShapeCreator shapeCreator) {
         this.shapeCreator = shapeCreator;
     }
 
     public MyShape create(){
-        shape.setShape(shapeCreator.create());
+        shape = new MyShape();
+        shape.setSf(shapeCreator.create());
         return shape;
     }
 }

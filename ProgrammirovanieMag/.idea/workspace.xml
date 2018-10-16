@@ -15,19 +15,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/ProgrammirovanieMag/myShape/decorater/Border.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgrammirovanieMag/myShape/decorater/Border.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProgrammirovanieMag/myShape/decorater/Cross.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgrammirovanieMag/myShape/decorater/Cross.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProgrammirovanieMag/myShape/decorater/MyShapeInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProgrammirovanieMag/myShape/decorater/MyShapeInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fabrica/MyShapeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fabrica/MyShapeCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/Fill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/Fill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/FillBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/FillBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/MyLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/MyLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/MyRectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/MyRectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/MyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/MyShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/NoFill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/NoFill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/ShapeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/ShapeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/decorater/Border.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/decorater/Border.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/decorater/Cross.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/decorater/Cross.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myShape/decorater/MyShapeInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myShape/decorater/MyShapeInterface.java" afterDir="false" />
     </list>
     <ignored path="ProgrammirovanieMag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -161,13 +149,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="923" />
-          <entry key="txt" value="12" />
+          <entry key="txt" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="923" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="PLAIN_TEXT" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -182,15 +170,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+            <state relative-caret-position="166">
+              <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#376#377#0" expanded="true" />
                 <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#1074#1075#0" expanded="true" />
                 <element signature="e#1126#1127#0" expanded="true" />
               </folding>
             </state>
@@ -246,11 +235,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+            <state relative-caret-position="346">
+              <caret line="50" column="50" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="50" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -373,8 +362,8 @@
         <option value="$PROJECT_DIR$/src/myShape/decorater/Border.java" />
         <option value="$PROJECT_DIR$/src/myShape/MyRectangle.java" />
         <option value="$PROJECT_DIR$/src/fabrica/MyShapeCreator.java" />
-        <option value="$PROJECT_DIR$/src/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/Model/Model.java" />
       </list>
     </option>
   </component>
@@ -603,7 +592,7 @@
       <workItem from="1539634837791" duration="57000" />
       <workItem from="1539682122739" duration="4669000" />
       <workItem from="1539694770249" duration="511000" />
-      <workItem from="1539695476854" duration="2170000" />
+      <workItem from="1539695476854" duration="2501000" />
     </task>
     <task id="LOCAL-00001" summary="Add fabrica">
       <created>1539684482477</created>
@@ -612,17 +601,24 @@
       <option name="project" value="LOCAL" />
       <updated>1539684482478</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавили паттерн прототип">
+      <created>1539697955821</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539697955821</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18484000" />
+    <option name="totallyTimeSpent" value="18815000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="30" width="1924" height="1022" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21671991" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21671991" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info id="Palette&#9;" order="3" />
@@ -632,7 +628,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32740214" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32516703" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32516703" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -699,7 +695,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add fabrica" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add fabrica" />
+    <MESSAGE value="Добавили паттерн прототип" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавили паттерн прототип" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -883,19 +880,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#376#377#0" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fabrica/MyShapeCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -954,10 +938,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
+        <state relative-caret-position="346">
+          <caret line="50" column="50" lean-forward="true" selection-start-line="48" selection-start-column="9" selection-end-line="50" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="29" column="7" lean-forward="true" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#1074#1075#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
           </folding>
         </state>
       </provider>

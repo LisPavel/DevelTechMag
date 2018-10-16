@@ -46,9 +46,9 @@ public class Controller {
         shape.setColor(Color.red);
 
 
-//        myShapeCreator = new MyShapeCreator();
-//        myShapeCreator.setShapeCreator(new EllipseCreator());
-//        model.setMyShapeCreator(myShapeCreator);
+        myShapeCreator = new MyShapeCreator();
+        myShapeCreator.setShapeCreator(new EllipseCreator());
+        model.setMyShapeCreator(myShapeCreator);
 
         model.setCurrShape(shape);
         ((Observable)model).addObserver(myPanel);
