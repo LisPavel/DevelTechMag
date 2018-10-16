@@ -12,11 +12,19 @@ import java.util.List;
 import java.util.Observable;
 
 public class Model extends Observable {
+    private static Model ourInstance = new Model();
+
+    public static Model getInstance() {
+        return ourInstance;
+    }
+
+
     MyShape currShape;
     MyShapeCreator myShapeCreator;
     List<MyShape> list;
 
-    public Model() {
+//    public Model() {
+    private Model() {
         list = new ArrayList<MyShape>();
         myShapeCreator = new MyShapeCreator();
     }

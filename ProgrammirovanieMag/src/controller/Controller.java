@@ -39,7 +39,10 @@ public class Controller {
         //myShape.setParametr(11);
         ((Observable)myShape).addObserver(myPanel);
         myPanel.setController(this);
-        model = new Model();
+
+//        model = new Model();
+        model = Model.getInstance();
+
         p = new Point2D[2];
         shape = new MyShape();
 
