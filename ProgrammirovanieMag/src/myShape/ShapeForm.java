@@ -9,4 +9,5 @@ import java.awt.geom.Point2D;
 public interface ShapeForm {
     void setSize(Point2D[] p);
     Shape getShape();
+    ShapeForm clone();
 }

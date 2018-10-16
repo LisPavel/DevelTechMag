@@ -20,4 +20,9 @@ public class Fill implements FillBehavior{
         g2.draw(ms.getShape().getShape());
         g2.setPaint(p);
     }
+
+    @Override
+    public FillBehavior clone() {
+        return new Fill(3);
+    }
 }

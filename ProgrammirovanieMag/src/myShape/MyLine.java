@@ -33,4 +33,9 @@ public class MyLine implements ShapeForm {
     public Shape getShape() {
         return line;
     }
+
+    @Override
+    public ShapeForm clone() {
+        return new MyLine((Line2D) line.clone());
+    }
 }

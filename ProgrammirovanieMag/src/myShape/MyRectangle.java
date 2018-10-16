@@ -26,6 +26,11 @@ public class MyRectangle implements ShapeForm{
     }
 
     @Override
+    public ShapeForm clone() {
+        return new MyRectangle((RectangularShape) shape.clone());
+    }
+
+    @Override
     public void setSize(Point2D[] p) {
         shape.setFrameFromDiagonal(p[0],p[1]);
 
