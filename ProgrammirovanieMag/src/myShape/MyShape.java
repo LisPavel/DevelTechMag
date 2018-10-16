@@ -76,6 +76,10 @@ public class MyShape extends Observable implements MyShapeInterface {
         fb.draw(g2,this);
     }
 
+    public void setShape(ShapeForm shapeForm) {
+        this.sf = shapeForm;
+    }
+
 //    @Override
 //    protected Object clone() throws CloneNotSupportedException {
 //        return super.clone();
