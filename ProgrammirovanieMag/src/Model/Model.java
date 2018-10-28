@@ -3,6 +3,7 @@ package Model;
 import fabrica.LineCreator;
 import fabrica.MyShapeCreator;
 import fabrica.RectCreator;
+import myShape.FillBehavior;
 import myShape.MyShape;
 
 import java.awt.*;
@@ -19,6 +20,10 @@ public class Model extends Observable {
     }
 
 
+    public MyShape getCurrShape() {
+        return currShape;
+    }
+
     MyShape currShape;
     MyShapeCreator myShapeCreator;
     List<MyShape> list;
@@ -34,8 +39,8 @@ public class Model extends Observable {
     }
 
     public void addShape(){
-//        currShape = currShape.clone();
-        currShape = myShapeCreator.create();
+        //currShape = currShape.clone();
+        //currShape = myShapeCreator.create();
         list.add(currShape);
     }
 
@@ -45,10 +50,18 @@ public class Model extends Observable {
         notifyObservers();
     }
 
+    public void setFill(FillBehavior fill) {
+        currShape.setFb(fill);
+        setChanged();
+        notifyObservers();
+    }
+
     public void draw(Graphics2D graph) {
         if (!list.isEmpty()) {
             for (MyShape s: list) s.draw(graph);
         }
+        setChanged();
+        notifyObservers();
     }
 
     public void setMyShapeCreator(MyShapeCreator myShapeCreator) {

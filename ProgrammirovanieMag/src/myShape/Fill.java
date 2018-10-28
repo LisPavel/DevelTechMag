@@ -7,10 +7,7 @@ import java.awt.*;
  */
 public class Fill implements FillBehavior{
     int penSize;
-    public Fill(int penSize)
-    {
-        this.penSize = penSize;
-    }
+    public Fill(int penSize)    { this.penSize = penSize;   }
     @Override
     public void draw(Graphics2D g2, MyShape ms) {
         Paint p = g2.getPaint();
@@ -21,8 +18,12 @@ public class Fill implements FillBehavior{
         g2.setPaint(p);
     }
 
+    public int getPenSize() {
+        return penSize;
+    }
+
     @Override
     public FillBehavior clone() {
-        return new Fill(3);
+        return new Fill(penSize);
     }
 }

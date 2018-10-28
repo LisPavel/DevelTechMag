@@ -1,6 +1,5 @@
-package myShape.decorater;
+package myShape.decorator;
 
-import myShape.Fill;
 import myShape.FillBehavior;
 import myShape.ShapeForm;
 
@@ -60,11 +59,6 @@ public class Border extends ShapeDecorator {
         msi.setSize(size);
         setChanged();
         notifyObservers();
-    }
-
-    @Override
-    public void setParametr(int param) {
-        this.width = param;
     }
 
     @Override

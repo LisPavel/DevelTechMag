@@ -1,10 +1,9 @@
 package myShape;
 
-import myShape.decorater.MyShapeInterface;
+import myShape.decorator.MyShapeInterface;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.util.Observable;
 
@@ -17,7 +16,7 @@ public class MyShape extends Observable implements MyShapeInterface {
     private Color col;
     private ShapeForm sf;
     private FillBehavior fb;
-    private int param;
+    //private int param;
 
     //    public ShapeForm getSf() {
 //        return sf;
@@ -51,10 +50,6 @@ public class MyShape extends Observable implements MyShapeInterface {
         notifyObservers();
     }
 
-    @Override
-    public void setParametr(int param) {
-        this.param = param;
-    }
 
     @Override
     public void setColor(Color col) {
@@ -84,7 +79,6 @@ public class MyShape extends Observable implements MyShapeInterface {
         MyShape new_s = new MyShape();
         new_s.setColor(col);
         new_s.setFb(fb.clone());
-        new_s.setParametr(param);
         new_s.setSf(sf.clone());
         return new_s;
 //        return new MyShape((MyShape)this.clone());

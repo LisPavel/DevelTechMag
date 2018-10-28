@@ -1,6 +1,5 @@
-package myShape.decorater;
+package myShape.decorator;
 
-import myShape.Fill;
 import myShape.FillBehavior;
 import myShape.ShapeForm;
 
@@ -56,11 +55,6 @@ public class Cross extends ShapeDecorator {
         msi.setSize(size);
         setChanged();
         notifyObservers();
-    }
-
-    @Override
-    public void setParametr(int param) {
-        return;
     }
 
     @Override

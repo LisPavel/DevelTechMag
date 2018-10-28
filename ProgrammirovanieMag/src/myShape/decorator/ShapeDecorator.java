@@ -1,4 +1,4 @@
-package myShape.decorater;
+package myShape.decorator;
 import java.util.Observable;
 
 public abstract class ShapeDecorator extends Observable implements MyShapeInterface{
