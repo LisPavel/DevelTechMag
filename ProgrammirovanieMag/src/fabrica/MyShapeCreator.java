@@ -23,7 +23,7 @@ public class MyShapeCreator {
     public MyShape create(){
         shape = new MyShape();
         shape.setSf(shapeCreator.create());
-        shape.setFb(fillCreator.ceate());
+        shape.setFb(fillCreator.create());
         shape.setColor(col);
         return shape;
     }
