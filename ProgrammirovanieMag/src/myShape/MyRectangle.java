@@ -31,6 +31,11 @@ public class MyRectangle implements ShapeForm{
     }
 
     @Override
+    public void setShape(ShapeForm shapeForm) {
+
+    }
+
+    @Override
     public void setSize(Point2D[] p) {
         shape.setFrameFromDiagonal(p[0],p[1]);
     }
