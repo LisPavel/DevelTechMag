@@ -39,7 +39,7 @@ public class Model extends Observable {
     }
 
     public void addShape(){
-        //currShape = currShape.clone();
+        currShape = currShape.clone();
         //currShape = myShapeCreator.create();
         list.add(currShape);
     }

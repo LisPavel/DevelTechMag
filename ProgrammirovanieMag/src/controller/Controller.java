@@ -26,6 +26,7 @@ public class Controller {
     Point2D p[];
     Point2D prevPoint;
     Point2D shapeTopLeft;
+    boolean isShapePressed;
 
     public Controller(){
         //myShape = new Cross( new Border( new MyShape() ));
@@ -52,34 +53,36 @@ public class Controller {
         //myShapeCreator.setShapeCreator(new EllipseCreator());
         //model.setMyShapeCreator(myShapeCreator);
         model.setCurrShape(shape);
-        model.setSize(p);
+        //model.setSize(p);
         //model.setFill(new Fill(5));
         model.addObserver(myPanel);
-        model.addShape();
+        //model.addShape();
 
     }
     public void press(Point2D point){
-        //p[0] = point;
-        System.out.println(shape.getShape().getShape().contains(point));
-        //if(shape.getShape().getShape().contains(point))
+        p[0] = point;
+        isShapePressed = model.getCurrShape().getShape().getShape().contains(point);
+        if(!isShapePressed)
+            model.addShape();
         prevPoint = point;
         shapeTopLeft = new Point2D.Double( model.getCurrShape().getShape().getShape().getBounds().x,
-                model.getCurrShape().getShape().getShape().getBounds().y      );
+                model.getCurrShape().getShape().getShape().getBounds().y);
     }
 
     public void drag(Point2D point){
-        //p[1] = point;
-        //model.setSize(p);
+
         Shape sh = model.getCurrShape().getShape().getShape();
         RectangularShape shape = (RectangularShape)sh;
+        if(isShapePressed)
+            shape.setFrame( shapeTopLeft.getX() + (point.getX() - prevPoint.getX()),
+                    shapeTopLeft.getY() + (point.getY() - prevPoint.getY()),
+                    shape.getWidth(), shape.getHeight());
+        else
+        {
+            p[1] = point;
+            model.setSize(p);
 
-        shape.setFrame( shapeTopLeft.getX() + (point.getX() - prevPoint.getX()),
-                shapeTopLeft.getY() + (point.getY() - prevPoint.getY()),
-                shape.getWidth(), shape.getHeight());
-        //System.out.println(point.getX() - prevPoint.getX());
-        //System.out.println(point.getY() - prevPoint.getY());
-        System.out.println(shape.getX());
-        System.out.println(shape.getY());
+        }
     }
 
     public void draw(Graphics2D graph){
