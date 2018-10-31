@@ -35,10 +35,10 @@ public class MoveActivity implements Activity{
 
     @Override
     public void drag(Point2D point) {
-        if(!shapeTopLeft.equals(null) )
+        if(shape != null )
             shape.setFrame( shapeTopLeft.getX() + (point.getX() - prevPoint.getX()),
-                  shapeTopLeft.getY() + (point.getY() - prevPoint.getY()),
-                 shape.getWidth(), shape.getHeight());
+                            shapeTopLeft.getY() + (point.getY() - prevPoint.getY()),
+                            shape.getWidth(), shape.getHeight());
 
     }
 }
