@@ -64,6 +64,16 @@ public class Model extends Observable {
         notifyObservers();
     }
 
+    public Shape findShape(Point2D point)
+    {
+        for (MyShape s : list)
+            if(s.getShape().getShape().contains(point)) {
+                setCurrShape(s);
+                return s.getShape().getShape();
+            }
+        return null;
+    }
+
     public void setMyShapeCreator(MyShapeCreator myShapeCreator) {
         this.myShapeCreator = myShapeCreator;
     }

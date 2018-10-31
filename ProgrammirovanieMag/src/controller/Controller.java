@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
+import activity.Activity;
+import activity.DrawActivity;
+import activity.MoveActivity;
 import fabrica.EllipseCreator;
 import fabrica.MyShapeCreator;
 import myShape.Fill;
@@ -23,18 +26,22 @@ public class Controller {
     MyPanel myPanel;
     MyFrame myFrame;
     Model model;
-    Point2D p[];
 
+
+
+   //Activity activity;
     State state;
-    //Point2D prevPoint;
-    //Point2D shapeTopLeft;
-    //boolean isShapePressed;
+
+
+
 
     public Controller(){
         //myShape = new Cross( new Border( new MyShape() ));
         //myShape.setColor(Color.PINK);
         //myShape.setFb(new Fill(2));
         //myShape.setSf(new MyLine(new Line2D.Double()) );
+
+
         state = new State();
         myPanel = new MyPanel();
 
@@ -42,11 +49,12 @@ public class Controller {
         myPanel.setController(this);
 //        model = new Model();
         model = Model.getInstance();
+        //activity = new DrawActivity();
         state.setModel(model);
+        //state.setActivity(activity);
+        //activity.setModel(model);
 
-        p = new Point2D[2];
-        p[0] = new Point2D.Double(300, 300);
-        p[1] = new Point2D.Double(500, 500);
+
 
         //myShapeCreator = new MyShapeCreator();
         //myShapeCreator.setShapeCreator(new EllipseCreator());
@@ -56,14 +64,16 @@ public class Controller {
         //model.setFill(new Fill(5));
         model.addObserver(myPanel);
         //model.addShape();
-        myFrame = new MyFrame(myPanel , state);
+        myFrame = new MyFrame(myPanel , state, this);
 
     }
     public void press(Point2D point){
-        p[0] = point;
+
+        state.press(point);
+
         //isShapePressed = model.getCurrShape().getShape().getShape().contains(point);
         //if(!isShapePressed)
-        model.addShape();
+
         //prevPoint = point;
         //shapeTopLeft = new Point2D.Double( model.getCurrShape().getShape().getShape().getBounds().x,
          //       model.getCurrShape().getShape().getShape().getBounds().y);
@@ -71,6 +81,7 @@ public class Controller {
 
     public void drag(Point2D point){
 
+        state.drag(point);
         Shape sh = model.getCurrShape().getShape().getShape();
         RectangularShape shape = (RectangularShape)sh;
         //if(isShapePressed)
@@ -79,8 +90,7 @@ public class Controller {
            //         shape.getWidth(), shape.getHeight());
         //else
         //{
-            p[1] = point;
-            model.setSize(p);
+
 
         //}
     }
@@ -88,4 +98,6 @@ public class Controller {
     public void draw(Graphics2D graph){
         model.draw(graph);
     }
+
+
 }
