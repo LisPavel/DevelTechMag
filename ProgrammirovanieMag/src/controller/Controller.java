@@ -8,20 +8,10 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
-import activity.Activity;
-import activity.DrawActivity;
-import activity.MoveActivity;
-import fabrica.EllipseCreator;
-import fabrica.MyShapeCreator;
-import myShape.Fill;
-import myShape.MyShape;
-import myShape.NoFill;
-import myShape.ShapeForm;
-import myShape.decorator.MyShapeInterface;
 
 public class Controller {
     //MyShapeInterface myShape;
-    MyShapeCreator myShapeCreator;
+    //MyShapeCreator myShapeCreator;
 
     MyPanel myPanel;
     MyFrame myFrame;

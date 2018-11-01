@@ -36,6 +36,11 @@ public class MyShape extends Observable implements MyShapeInterface {
         notifyObservers();
     }
 
+    @Override
+    public FillBehavior getFB() {
+        return fb;
+    }
+
     public MyShape(){
         col = Color.red;
         sf = new MyRectangle(new Ellipse2D.Double());
@@ -71,12 +76,14 @@ public class MyShape extends Observable implements MyShapeInterface {
         fb.draw(g2,this);
     }
 
+    @Override
     public void setShape(ShapeForm shapeForm) {
         this.sf = shapeForm;
     }
 
-    public MyShape clone(){
-        MyShape new_s = new MyShape();
+    @Override
+    public MyShapeInterface clone(){
+        MyShapeInterface new_s = new MyShape();
         new_s.setColor(col);
         new_s.setFb(fb.clone());
         new_s.setSf(sf.clone());

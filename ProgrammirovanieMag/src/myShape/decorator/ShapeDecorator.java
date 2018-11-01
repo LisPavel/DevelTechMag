@@ -5,6 +5,11 @@ public abstract class ShapeDecorator extends Observable implements MyShapeInterf
 
     MyShapeInterface msi;
 
+    @Override
+    public MyShapeInterface clone() {
+        return null;
+    }
+
     public ShapeDecorator(MyShapeInterface msi) {
         this.msi = msi;
     }

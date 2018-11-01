@@ -1,6 +1,7 @@
 package myShape.decorator;
 
 import myShape.FillBehavior;
+import myShape.MyShape;
 import myShape.ShapeForm;
 
 import java.awt.*;
@@ -15,7 +16,7 @@ public class Cross extends ShapeDecorator {
     @Override
     public void draw(Graphics2D g2) {
         msi.draw(g2);
-
+        g2.setPaint(getColor());
         Shape helpShape = msi.getShape().getShape();
 
         if (helpShape instanceof RectangularShape){
@@ -51,10 +52,20 @@ public class Cross extends ShapeDecorator {
     }
 
     @Override
+    public FillBehavior getFB() {
+        return msi.getFB();
+    }
+
+    @Override
     public void setSize(Point2D[] size) {
         msi.setSize(size);
         setChanged();
         notifyObservers();
+    }
+
+    @Override
+    public void setShape(ShapeForm shapeForm) {
+        msi.setShape(shapeForm);
     }
 
     @Override
@@ -70,5 +81,14 @@ public class Cross extends ShapeDecorator {
     @Override
     public ShapeForm getShape() {
         return msi.getShape();
+    }
+
+    @Override
+    public MyShapeInterface clone() {
+        MyShapeInterface myShapeInterface = new Border(new Cross(new MyShape()));
+        myShapeInterface.setColor(getColor());
+        myShapeInterface.setShape(getShape().clone());
+        myShapeInterface.setFb(getFB().clone());
+        return myShapeInterface;
     }
 }

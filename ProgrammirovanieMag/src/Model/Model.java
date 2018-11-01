@@ -5,6 +5,7 @@ import fabrica.MyShapeCreator;
 import fabrica.RectCreator;
 import myShape.FillBehavior;
 import myShape.MyShape;
+import myShape.decorator.MyShapeInterface;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -20,21 +21,21 @@ public class Model extends Observable {
     }
 
 
-    public MyShape getCurrShape() {
+    public MyShapeInterface getCurrShape() {
         return currShape;
     }
 
-    MyShape currShape;
+    MyShapeInterface currShape;
     MyShapeCreator myShapeCreator;
-    List<MyShape> list;
+    List<MyShapeInterface> list;
 
 //    public Model() {
     private Model() {
-        list = new ArrayList<MyShape>();
+        list = new ArrayList<MyShapeInterface>();
         myShapeCreator = new MyShapeCreator();
     }
 
-    public void setCurrShape(MyShape currShape) {
+    public void setCurrShape(MyShapeInterface currShape) {
         this.currShape = currShape;
     }
 
@@ -58,7 +59,7 @@ public class Model extends Observable {
 
     public void draw(Graphics2D graph) {
         if (!list.isEmpty()) {
-            for (MyShape s: list) s.draw(graph);
+            for (MyShapeInterface s: list) s.draw(graph);
         }
         setChanged();
         notifyObservers();
@@ -66,7 +67,7 @@ public class Model extends Observable {
 
     public Shape findShape(Point2D point)
     {
-        for (MyShape s : list)
+        for (MyShapeInterface s : list)
             if(s.getShape().getShape().contains(point)) {
                 setCurrShape(s);
                 return s.getShape().getShape();

@@ -8,13 +8,16 @@ import myShape.Fill;
 import myShape.FillBehavior;
 import myShape.MyShape;
 import myShape.ShapeForm;
+import myShape.decorator.Border;
+import myShape.decorator.Cross;
+import myShape.decorator.MyShapeInterface;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
 public class State {
-    MyShape shape;
+    MyShapeInterface shape;
     FillBehavior fillBehavior;
     Color col;
     Model  model;
@@ -27,14 +30,12 @@ public class State {
     }
 
 
-
-
     public void setShape(ShapeForm shapeForm) {
         //this.shape = shape;
         this.shape.setShape(shapeForm);
         this.shape.setColor(col);
         this.shape.setFb(fillBehavior);
-        model.setCurrShape(this.shape);
+        model.setCurrShape(shape);
     }
 
     public void setFillBehavior(FillBehavior fillBehavior) {
@@ -50,10 +51,10 @@ public class State {
     }
 
     public State() {
-        shape = new MyShape();
+        shape = new Cross( new Border(new MyShape()));
         col = Color.PINK;
         shape.setColor(col);
-        fillBehavior= new Fill(5);
+        fillBehavior = new Fill(5);
         shape.setFb(fillBehavior);
         activity = new DrawActivity();
     }
