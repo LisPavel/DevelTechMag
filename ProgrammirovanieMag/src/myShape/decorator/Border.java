@@ -89,7 +89,11 @@ public class Border extends ShapeDecorator {
 
     @Override
     public MyShapeInterface clone() {
-        MyShapeInterface myShapeInterface = new Border(new MyShape());
+        MyShapeInterface myShapeInterface;
+        if(msi instanceof Cross)
+            myShapeInterface = new Border(new Cross(new MyShape()) );
+        else
+            myShapeInterface = new Border(new MyShape() );
         myShapeInterface.setColor(getColor());
         myShapeInterface.setShape(getShape().clone());
         myShapeInterface.setFb(getFB().clone());

@@ -16,22 +16,13 @@ public class Controller {
     MyPanel myPanel;
     MyFrame myFrame;
     Model model;
-
-
-
-   //Activity activity;
     State state;
-
-
-
 
     public Controller(){
         //myShape = new Cross( new Border( new MyShape() ));
         //myShape.setColor(Color.PINK);
         //myShape.setFb(new Fill(2));
         //myShape.setSf(new MyLine(new Line2D.Double()) );
-
-
         state = new State();
         myPanel = new MyPanel();
 
@@ -43,7 +34,6 @@ public class Controller {
         state.setModel(model);
         //state.setActivity(activity);
         //activity.setModel(model);
-
 
 
         //myShapeCreator = new MyShapeCreator();

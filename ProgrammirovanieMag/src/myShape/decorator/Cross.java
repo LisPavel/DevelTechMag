@@ -10,6 +10,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.RectangularShape;
 
 public class Cross extends ShapeDecorator {
+    private int margin = 12;
     public Cross(MyShapeInterface msi) {
         super(msi);
     }
@@ -24,13 +25,13 @@ public class Cross extends ShapeDecorator {
             Point2D right = null;
             if (!helpShape.getBounds2D().isEmpty()){
                 left = new Point2D.Double(
-                        helpShape.getBounds2D().getMinX()  ,
-                        helpShape.getBounds2D().getMinY()
+                        helpShape.getBounds2D().getMinX() - margin ,
+                        helpShape.getBounds2D().getMinY() - margin
                 );
 
                 right = new Point2D.Double(
-                        helpShape.getBounds2D().getMaxX()  ,
-                        helpShape.getBounds2D().getMaxY()
+                        helpShape.getBounds2D().getMaxX() + margin ,
+                        helpShape.getBounds2D().getMaxY() + margin
                 );
             }
 
@@ -85,7 +86,11 @@ public class Cross extends ShapeDecorator {
 
     @Override
     public MyShapeInterface clone() {
-        MyShapeInterface myShapeInterface = new Border(new Cross(new MyShape()));
+        MyShapeInterface myShapeInterface;
+        if(msi instanceof Border)
+            myShapeInterface = new Cross(new Border(new MyShape()));
+        else
+            myShapeInterface = new Cross(new MyShape());
         myShapeInterface.setColor(getColor());
         myShapeInterface.setShape(getShape().clone());
         myShapeInterface.setFb(getFB().clone());

@@ -1,14 +1,15 @@
 package View;
+import Model.Model;
 import activity.Activity;
 import activity.DrawActivity;
 import activity.MoveActivity;
 import controller.Controller;
 import controller.State;
-import menu.SwitchActivity;
-import menu.SwitchColor;
-import menu.SwitchShape;
-import menu.SwitchState;
+import menu.*;
 import myShape.MyRectangle;
+import myShape.MyShape;
+import myShape.decorator.Border;
+import myShape.decorator.Cross;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,9 +47,17 @@ public class MyFrame extends JFrame{
                 new SwitchActivity(state, new MoveActivity() )));
         list.add(new SwitchState("Рисование", new ImageIcon(getClass().getResource("draw.png")),
                 new SwitchActivity(state, new DrawActivity() )));
+        list.add(new SwitchState("Без декорации", new ImageIcon(getClass().getResource("no-stopping.png")),
+                new SwitchDecoration(state, new MyShape())));
+        list.add(new SwitchState("Граница", new ImageIcon(getClass().getResource("object.png")),
+                new SwitchDecoration(state, new Border(new MyShape())) ));
+        list.add(new SwitchState("Пересечение", new ImageIcon(getClass().getResource("screwdriver-and-wrench-crossed.png")),
+                new SwitchDecoration(state, new Cross(new MyShape())) ));
+        list.add(new SwitchState("Граница и Пересечение", new ImageIcon(getClass().getResource("cross-mark-with-circle-border.png")),
+                new SwitchDecoration(state,  new Border(new Cross(new MyShape())) )));
         /////////////////////
 
-        JMenu menu, menu1, menu2, menu3;
+        JMenu menu, menu1, menu2, menu3, menu4;
  //       JMenuItem ellepseItem = new JMenuItem("Эллипс");
 //        ellepseItem.addActionListener(new ActionListener() {
 //            @Override
@@ -70,18 +79,24 @@ public class MyFrame extends JFrame{
         menu1= new JMenu("Фигура");
         menu2 = new JMenu("Цвет");
         menu3 = new JMenu("Активность");
+        menu4 = new JMenu("Декорации");
         /////
         menu1.add(list.get(0));
         menu1.add(list.get(1));
         menu2.add(list.get(2));
         menu3.add(list.get(3));
         menu3.add(list.get(4));
+        menu4.add(list.get(5));
+        menu4.add(list.get(6));
+        menu4.add(list.get(7));
+        menu4.add(list.get(8));
         ////////
 
         bar.add(menu);
         bar.add(menu1);
         bar.add(menu2);
         bar.add(menu3);
+        bar.add(menu4);
         /////
 
         this.setJMenuBar(bar);

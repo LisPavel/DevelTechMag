@@ -23,6 +23,14 @@ public class State {
     Model  model;
     Activity activity;
 
+    public void setMyShape(MyShapeInterface myShape) {
+        myShape.setColor(col);
+        myShape.setFb(fillBehavior);
+        myShape.setShape(shape.getShape());
+        this.shape = myShape;
+        model.setCurrShape(shape);
+    }
+
     public void setCol(Color col) {
         this.col = col;
         shape.setColor(col);
