@@ -6,8 +6,10 @@ import activity.MoveActivity;
 import controller.Controller;
 import controller.State;
 import menu.*;
+import myShape.Fill;
 import myShape.MyRectangle;
 import myShape.MyShape;
+import myShape.NoFill;
 import myShape.decorator.Border;
 import myShape.decorator.Cross;
 
@@ -55,9 +57,13 @@ public class MyFrame extends JFrame{
                 new SwitchDecoration(state, new Cross(new MyShape())) ));
         list.add(new SwitchState("Граница и Пересечение", new ImageIcon(getClass().getResource("cross-mark-with-circle-border.png")),
                 new SwitchDecoration(state,  new Border(new Cross(new MyShape())) )));
+        list.add(new SwitchState("Без заливки", new ImageIcon(getClass().getResource("photo-frame.png")),
+                new SwitchFill(state, new NoFill(5))));
+        list.add(new SwitchState("С заливкой", new ImageIcon(getClass().getResource("maps-and-flags.png")),
+                new SwitchFill(state, new Fill(5))) );
         /////////////////////
 
-        JMenu menu, menu1, menu2, menu3, menu4;
+        JMenu menu, menu1, menu2, menu3, menu4, menu5;
  //       JMenuItem ellepseItem = new JMenuItem("Эллипс");
 //        ellepseItem.addActionListener(new ActionListener() {
 //            @Override
@@ -80,6 +86,7 @@ public class MyFrame extends JFrame{
         menu2 = new JMenu("Цвет");
         menu3 = new JMenu("Активность");
         menu4 = new JMenu("Декорации");
+        menu5 = new JMenu("Заливка");
         /////
         menu1.add(list.get(0));
         menu1.add(list.get(1));
@@ -90,6 +97,8 @@ public class MyFrame extends JFrame{
         menu4.add(list.get(6));
         menu4.add(list.get(7));
         menu4.add(list.get(8));
+        menu5.add(list.get(9));
+        menu5.add(list.get(10));
         ////////
 
         bar.add(menu);
@@ -97,6 +106,7 @@ public class MyFrame extends JFrame{
         bar.add(menu2);
         bar.add(menu3);
         bar.add(menu4);
+        bar.add(menu5);
         /////
 
         this.setJMenuBar(bar);
