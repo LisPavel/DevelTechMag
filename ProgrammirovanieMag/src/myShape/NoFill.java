@@ -20,7 +20,7 @@ public class NoFill implements FillBehavior {
 
     @Override
     public FillBehavior clone() {
-        return new NoFill(0);
+        return new NoFill(penSize);
     }
 
 

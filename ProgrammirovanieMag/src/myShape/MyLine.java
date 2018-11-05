@@ -38,4 +38,9 @@ public class MyLine implements ShapeForm {
     public ShapeForm clone() {
         return new MyLine((Line2D)line.clone());
     }
+
+    @Override
+    public void setShape(ShapeForm shapeForm) {
+        ///
+    }
 }

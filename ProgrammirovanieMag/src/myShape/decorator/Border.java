@@ -1,7 +1,7 @@
-package myShape.decorater;
+package myShape.decorator;
 
-import myShape.Fill;
 import myShape.FillBehavior;
+import myShape.MyShape;
 import myShape.ShapeForm;
 
 import java.awt.*;
@@ -56,6 +56,11 @@ public class Border extends ShapeDecorator {
     }
 
     @Override
+    public FillBehavior getFB() {
+        return msi.getFB();
+    }
+
+    @Override
     public void setSize(Point2D[] size) {
         msi.setSize(size);
         setChanged();
@@ -63,8 +68,8 @@ public class Border extends ShapeDecorator {
     }
 
     @Override
-    public void setParametr(int param) {
-        this.width = param;
+    public void setShape(ShapeForm shapeForm) {
+        msi.setShape(shapeForm);
     }
 
     @Override
@@ -80,5 +85,18 @@ public class Border extends ShapeDecorator {
     @Override
     public ShapeForm getShape() {
         return msi.getShape();
+    }
+
+    @Override
+    public MyShapeInterface clone() {
+        MyShapeInterface myShapeInterface;
+        if(msi instanceof Cross)
+            myShapeInterface = new Border(new Cross(new MyShape()) );
+        else
+            myShapeInterface = new Border(new MyShape() );
+        myShapeInterface.setColor(getColor());
+        myShapeInterface.setShape(getShape().clone());
+        myShapeInterface.setFb(getFB().clone());
+        return myShapeInterface;
     }
 }

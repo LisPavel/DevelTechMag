@@ -17,10 +17,6 @@ public class MyRectangle implements ShapeForm{
         shape = s;
     }
 
-    public void setShape(RectangularShape shape) {
-        this.shape = shape;
-    }
-
     public RectangularShape getShape() {
         return shape;
     }
@@ -31,8 +27,12 @@ public class MyRectangle implements ShapeForm{
     }
 
     @Override
+    public void setShape(ShapeForm shapeForm) {
+        //shape = shapeForm;
+    }
+
+    @Override
     public void setSize(Point2D[] p) {
         shape.setFrameFromDiagonal(p[0],p[1]);
-
     }
 }

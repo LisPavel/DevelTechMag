@@ -1,7 +1,7 @@
-package myShape.decorater;
+package myShape.decorator;
 
-import myShape.Fill;
 import myShape.FillBehavior;
+import myShape.MyShape;
 import myShape.ShapeForm;
 
 import java.awt.*;
@@ -12,10 +12,13 @@ public interface MyShapeInterface {
 
     void setSf(ShapeForm sf);
     void setFb(FillBehavior fill);
+    FillBehavior getFB();
 
     void setSize(Point2D[] size);
-    void setParametr(int param);
+    void setShape(ShapeForm shapeForm);
+    //void setParametr(int param);
     void setColor(Color col);
     Color getColor();
     ShapeForm getShape();
+    MyShapeInterface clone();
 }

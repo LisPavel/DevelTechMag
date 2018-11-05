@@ -10,4 +10,6 @@ public interface ShapeForm {
     void setSize(Point2D[] p);
     Shape getShape();
     ShapeForm clone();
+
+    void setShape(ShapeForm shapeForm);
 }
